@@ -1,13 +1,42 @@
 ﻿body {
+    font: "Trebuchet MS", Verdana, sans-serif;
+    background-color: #5c87b2;
+    color: darkslategray;
     padding-top: 50px;
     padding-bottom: 20px;
+}
+h1
+{
+    border-bottom: 3px solid #cc9900;
+    font: Georgia, serif;
+    color: #996600;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #ffffff;
+    border-radius: 0 4px 4px 4px;
 }
+ul.body-content{
+    padding: 0px;
+    position: relative;
+    margin: 0;
+}
+
+ul.body-content li a {
+    background-color: #e8eef4;
+    padding: 10px 20px;
+    text-decoration: none;
+    line-height: 2.8em;
+    /*CSS3 properties*/
+    border-radius: 4px 4px 0 0;
+}
+
+    ul.body-content li a:hover {
+        background-color: #ffffff;
+    }
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -22,3 +51,37 @@ select,
 textarea {
     max-width: 280px;
 }
+fieldset {
+    padding-left: 12px;
+}
+
+    fieldset label {
+        display: block;
+        padding: 4px;
+    }
+
+input[type="text"], input[type="password"] {
+    width: 300px;
+}
+
+input[type="submit"] {
+    padding: 4px;
+}
+/* Data Styles ------------------------------*/
+table.data {
+    background-color: #ffffff;
+    border: 1px solid #c3c3c3;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    table.data th {
+        background-color: #e8eef4;
+        border: 1px solid #c3c3c3;
+        padding: 3px;
+    }
+
+    table.data td {
+        border: 1px solid #c3c3c3;
+        padding: 3px;
+    }

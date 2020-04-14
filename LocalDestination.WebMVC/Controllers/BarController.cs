@@ -10,31 +10,31 @@ using System.Web.Mvc;
 namespace LocalDestination.WebMVC.Controllers
 {
     [Authorize]
-    public class HotelController : Controller
+    public class BarController : Controller
     {
-        // GET: Hotel
+        // GET: Bar
         public ActionResult Index()
         {
             {
-                var service = CreateHotelService();
-                var model = service.GetHotels();
+                var service = CreateBarService();
+                var model = service.GetBars();
 
                 return View(model);
             }
         }
 
-            // GET: Hotel/Create
-            public ActionResult Create()
-            {
-                PopulateDestinations();
+        // GET: Bar/Create
+        public ActionResult Create()
+        {
+            PopulateDestinations();
 
-                return View();
-            }
+            return View();
+        }
 
-        // POST: Hotel/Create
+        // POST: Bar/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(HotelCreate model)
+        public ActionResult Create(BarCreate model)
         {
             if (!ModelState.IsValid)
             {
@@ -42,37 +42,37 @@ namespace LocalDestination.WebMVC.Controllers
                 return View(model);
             }
 
-            var service = CreateHotelService();
+            var service = CreateBarService();
 
-            if (service.CreateHotel(model))
+            if (service.CreateBar(model))
             {
-                TempData["SaveResult"] = "Your Hotel was created.";
+                TempData["SaveResult"] = "Your Bar was created.";
                 return RedirectToAction("Index");
             }
 
             PopulateDestinations();
-            ModelState.AddModelError("", "Hotel could not be created");
+            ModelState.AddModelError("", "Bar could not be created");
             return View(model);
         }
 
-        // GET: Hotel/Details/{id}
+        // GET: Bar/Details/{id}
         public ActionResult Details(int id)
         {
-            var service = CreateHotelService();
-            var model = service.GetHotelById(id);
+            var service = CreateBarService();
+            var model = service.GetBarById(id);
             return View(model);
         }
 
-        // GET: Hotel/Edit/{id}
+        // GET: Bar/Edit/{id}
         public ActionResult Edit(int id)
         {
 
-            var service = CreateHotelService();
-            var detail = service.GetHotelById(id);
+            var service = CreateBarService();
+            var detail = service.GetBarById(id);
             var model =
-                new HotelEdit
+                new BarEdit
                 {
-                    HotelId = detail.HotelId,
+                    BarId = detail.BarId,
                     Name = detail.Name,
                     Address = detail.Address,
                     Comment = detail.Comment
@@ -81,10 +81,10 @@ namespace LocalDestination.WebMVC.Controllers
             return View(model);
         }
 
-        // POST: Hotel/Edit/{id}
+        // POST: Bar/Edit/{id}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, HotelEdit model)
+        public ActionResult Edit(int id, BarEdit model)
         {
             if (!ModelState.IsValid)
             {
@@ -93,52 +93,52 @@ namespace LocalDestination.WebMVC.Controllers
                 return View(model);
             }
 
-            if (model.HotelId != id)
+            if (model.BarId != id)
             {
                 PopulateDestinations(model.DestinationId);
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
 
-            var service = CreateHotelService();
+            var service = CreateBarService();
 
-            if (service.UpdateHotel(model))
+            if (service.UpdateBar(model))
             {
-                TempData["SaveResult"] = "Your Hotel was updated.";
+                TempData["SaveResult"] = "Your Bar was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your Hotel could not be updated.");
+            ModelState.AddModelError("", "Your Bar could not be updated.");
             return View();
         }
 
-        // GET: Hotel/Delete/{id}
+        // GET: Bar/Delete/{id}
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var service = CreateHotelService();
-            var model = service.GetHotelById(id);
+            var service = CreateBarService();
+            var model = service.GetBarById(id);
 
             return View(model);
         }
 
-        // POST: Hotel/Delete/{id}
+        // POST: Bar/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
-            var service = CreateHotelService();
-            service.DeleteHotel(id);
+            var service = CreateBarService();
+            service.DeleteBar(id);
 
-            TempData["SaveResult"] = "Your Hotel was deleted.";
+            TempData["SaveResult"] = "Your Bar was deleted.";
             return RedirectToAction("Index");
         }
 
-        private HotelService CreateHotelService()
+        private BarService CreateBarService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new HotelService(userId);
+            var service = new BarService(userId);
             return service;
         }
 

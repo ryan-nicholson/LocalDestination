@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BarController.cs" />
     <Compile Include="Controllers\DestinationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
@@ -247,9 +248,15 @@
     <Content Include="Views\Destination\Index.cshtml" />
     <Content Include="Views\Destination\Delete.cshtml" />
     <Content Include="Views\Hotel\Create.cshtml" />
+    <Content Include="Views\Bar\Index.cshtml" />
+    <Content Include="Views\Bar\Create.cshtml" />
+    <Content Include="Views\Bar\Details.cshtml" />
+    <Content Include="Views\Bar\Edit.cshtml" />
+    <Content Include="Views\Bar\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

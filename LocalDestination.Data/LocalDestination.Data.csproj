@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bar.cs" />
     <Compile Include="Destination.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -64,6 +65,10 @@
     <Compile Include="Migrations\202004120540474_InitialMigration.cs" />
     <Compile Include="Migrations\202004120540474_InitialMigration.Designer.cs">
       <DependentUpon>202004120540474_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004132001514_AddedBar.cs" />
+    <Compile Include="Migrations\202004132001514_AddedBar.Designer.cs">
+      <DependentUpon>202004132001514_AddedBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004120540474_InitialMigration.resx">
       <DependentUpon>202004120540474_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004132001514_AddedBar.resx">
+      <DependentUpon>202004132001514_AddedBar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarCreate.cs" />
+    <Compile Include="BarDetail.cs" />
+    <Compile Include="BarEdit.cs" />
+    <Compile Include="BarListItem.cs" />
     <Compile Include="DestinationCreate.cs" />
     <Compile Include="DestinationDetail.cs" />
     <Compile Include="DestinationEdit.cs" />

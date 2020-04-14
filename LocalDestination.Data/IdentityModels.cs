@@ -33,6 +33,7 @@ namespace LocalDestination.Data
         }
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<Destination> Destinations { get; set; }
+        public DbSet<Bar> Bars { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

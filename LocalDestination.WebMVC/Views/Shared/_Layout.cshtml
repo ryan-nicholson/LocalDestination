@@ -11,7 +11,7 @@
     <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#314d68">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,11 +25,12 @@
                 <ul class="nav navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Hotels", "Index", "Hotel")</li>
                         <li>@Html.ActionLink("Destinations", "Index", "Destination")</li>
+                        <li>@Html.ActionLink("Hotels", "Index", "Hotel")</li>
+                        <li>@Html.ActionLink("Bars", "Index", "Bar")</li>
                     }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("More Info", "More Info", "Home")</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact Us", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

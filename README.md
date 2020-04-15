@@ -20,7 +20,7 @@ LocalDestination takes advantage of the built-in ApplicationUser in .net framewo
 
 ## But who is it for?
 
-This program is designed to be a perfect location for any traveler to get ideas of where to stay and those must see spots.  It wraps together a point of sale system, online order system, customer database and employee management system into one convenient package.  Our program allows for travelers to share an outstanding hole in the wall bar or a unique hotel.    
+This program is designed to be a perfect location for any traveler to get ideas of where to stay and those must see spots.  Our program allows for travelers to share an outstanding hole in the wall bar or a unique hotel.    
 
 ## Getting Started
 

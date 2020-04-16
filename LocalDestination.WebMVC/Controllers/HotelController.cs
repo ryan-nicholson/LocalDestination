@@ -13,6 +13,7 @@ namespace LocalDestination.WebMVC.Controllers
     public class HotelController : Controller
     {
         // GET: Hotel
+        [HttpGet]
         public ActionResult Index()
         {
             {
@@ -24,6 +25,7 @@ namespace LocalDestination.WebMVC.Controllers
         }
 
             // GET: Hotel/Create
+            [HttpGet]
             public ActionResult Create()
             {
                 PopulateDestinations();

@@ -24,7 +24,6 @@ namespace LocalDestination.Services
                 var barQuery =
                     ctx
                         .Bars
-                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e => new BarListItem
                             {
@@ -32,7 +31,8 @@ namespace LocalDestination.Services
                                 Name = e.Name,
                                 CreatedUtc = e.CreatedUtc,
                                 DestinationId = e.DestinationId,
-                                DestinationName = e.Destination.Name
+                                DestinationName = e.Destination.Name,
+                                IsUserOwned = e.OwnerId == _userId
                             });
 
                 return barQuery.ToArray();
@@ -67,7 +67,7 @@ namespace LocalDestination.Services
                 var entity =
                     ctx
                         .Bars
-                        .SingleOrDefault(e => e.BarId == id && e.OwnerId == _userId);
+                        .SingleOrDefault(e => e.BarId == id);
 
                 return
                     new BarDetail
@@ -80,7 +80,8 @@ namespace LocalDestination.Services
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc,
                         DestinationId = entity.DestinationId,
-                        DestinationName = entity.Destination.Name
+                        DestinationName = entity.Destination.Name,
+                        IsUserOwned = entity.OwnerId == _userId
                     };
             }
         }

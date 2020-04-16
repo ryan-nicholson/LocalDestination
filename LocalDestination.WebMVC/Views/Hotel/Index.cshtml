@@ -44,9 +44,14 @@
             @Html.DisplayFor(modelItem => item.DestinationName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.HotelId }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.HotelId  }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.HotelId  })
+            @Html.ActionLink("Details", "Details", new { id = item.HotelId }) |
+            @if (item.IsUserOwned)
+            {
+                <span>
+                @Html.ActionLink("Edit", "Edit", new { id = item.HotelId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.HotelId })
+                </span>
+            }
         </td>
     </tr>
 }

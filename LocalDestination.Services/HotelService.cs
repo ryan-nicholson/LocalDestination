@@ -24,7 +24,6 @@ namespace LocalDestination.Services
                 var hotelQuery =
                     ctx
                         .Hotels
-                        .Where(e => e.OwnerId == _userId)
                         .Select(
                             e => new HotelListItem
                             {
@@ -32,7 +31,8 @@ namespace LocalDestination.Services
                                 Name = e.Name,
                                 CreatedUtc = e.CreatedUtc,
                                 DestinationId = e.DestinationId,
-                                DestinationName = e.Destination.Name
+                                DestinationName = e.Destination.Name,
+                                IsUserOwned = e.OwnerId == _userId
                             });
 
                 return hotelQuery.ToArray();
@@ -66,7 +66,7 @@ namespace LocalDestination.Services
                 var entity =
                     ctx
                         .Hotels
-                        .SingleOrDefault(e => e.HotelId == id && e.OwnerId == _userId);
+                        .SingleOrDefault(e => e.HotelId == id);
 
                 return
                     new HotelDetail
@@ -78,7 +78,8 @@ namespace LocalDestination.Services
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc,
                         DestinationId = entity.DestinationId,
-                        DestinationName = entity.Destination.Name
+                        DestinationName = entity.Destination.Name,
+                        IsUserOwned = entity.OwnerId == _userId
                     };
             }
         }

@@ -13,6 +13,7 @@ namespace LocalDestination.Models
         public string Name { get; set; }
         public string Address { get; set; }
         public string Comment { get; set; }
+        public bool IsUserOwned { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

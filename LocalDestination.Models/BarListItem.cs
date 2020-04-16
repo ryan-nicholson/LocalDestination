@@ -12,6 +12,7 @@ namespace LocalDestination.Models
         public int BarId { get; set; }
 
         public string Name { get; set; }
+        public bool IsUserOwned { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

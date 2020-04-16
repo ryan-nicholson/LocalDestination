@@ -53,6 +53,9 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.HotelId  }) |
+    @if (Model.IsUserOwned)
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.HotelId }) <span> | </span>
+    }
     @Html.ActionLink("Back to List", "Index")
 </p>
